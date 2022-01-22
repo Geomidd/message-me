@@ -4,6 +4,18 @@
   height: 450px;
 }
 
+.borderless {
+  border: none !important;
+}
+
+.ui.basic.buttons.link .button:hover,
+.ui.basic.button.link:hover {
+  background: none !important;
+  :hover {
+    background: none !important;
+  }
+}
+
 $max: 10;
 $offset: 1;
 $unit: "em";
