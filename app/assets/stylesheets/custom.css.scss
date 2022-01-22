@@ -3,3 +3,17 @@
 .chatbox {
   height: 450px;
 }
+
+$max: 10;
+$offset: 1;
+$unit: "em";
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+@include list-loop(".mb-", "margin-bottom");

@@ -1,7 +1,8 @@
-<% flash.each do |name, msg| %>
-  <div class="ui message <%= name == "notice" ? "positive" : "negative" %>">
-    <i class="close icon"></i>
-    <%= content_tag(:div, msg) %>
-  </div>
-<% end %>
-<div class="header">
+<div class="ui container mb-2">
+  <% flash.each do |name, msg| %>
+    <div class="ui message <%= name == "notice" ? "info" : "negative" %>">
+      <i class="close icon"></i>
+      <%= content_tag(:div, msg) %>
+    </div>
+  <% end %>
+</div>
