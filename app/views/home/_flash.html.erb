@@ -2,7 +2,7 @@
   <% flash.each do |name, msg| %>
     <div class="ui message <%= name == "notice" ? "info" : "negative" %>">
       <i class="close icon"></i>
-      <%= content_tag(:div, msg) %>
+      <%= content_tag(:div, msg, class: "header") %>
     </div>
   <% end %>
 </div>
