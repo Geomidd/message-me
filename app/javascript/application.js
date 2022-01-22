@@ -3,6 +3,13 @@ import "@hotwired/turbo-rails";
 import "@doabit/semantic-ui-sass";
 import "./controllers";
 
-$(".message .close").on("click", function () {
-  $(this).closest(".message").transition("fade");
+$(document).on("turbo:load", function () {
+  // Setup Semantic UI handlers
+  // Message dismissal
+  $(".message .close").on("click", function () {
+    $(this).closest(".message").transition("fade");
+  });
+
+  // Dropdown
+  $(".ui.dropdown").dropdown();
 });
