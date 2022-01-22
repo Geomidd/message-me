@@ -13,3 +13,4 @@ $(document).on("turbo:load", function () {
   // Dropdown
   $(".ui.dropdown").dropdown();
 });
+import "./channels"
