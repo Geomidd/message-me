@@ -12,6 +12,14 @@ window.scroll_bottom = function () {
 
 $(document).on("turbo:load", function () {
   scroll_bottom();
+
+  // TODO: Make this less hacky
+  $("#chat-form").on("submit", function () {
+    setTimeout(() => {
+      $("#message_body").val("").trigger("focus");
+    }, 10);
+  });
+
   // Setup Semantic UI handlers
   // Message dismissal
   $(".message .close").on("click", function () {
@@ -21,4 +29,4 @@ $(document).on("turbo:load", function () {
   // Dropdown
   $(".ui.dropdown").dropdown();
 });
-import "./channels"
+import "./channels";
