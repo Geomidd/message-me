@@ -10,6 +10,25 @@ window.scroll_bottom = function () {
   }
 };
 
+function confirmSubmission(event) {
+  const button = event.target.querySelector("[data-confirm]");
+  const message = button?.dataset?.confirm;
+
+  return new Promise((resolve) => {
+    if (!message || confirm(message)) {
+      resolve();
+    } else {
+      event.detail.formSubmission.stop();
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  });
+}
+
+document.addEventListener("turbo:submit-start", (event) => {
+  confirmSubmission(event);
+});
+
 $(document).on("turbo:load", function () {
   scroll_bottom();
 
