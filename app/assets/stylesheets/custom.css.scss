@@ -16,6 +16,11 @@
   }
 }
 
+#messages {
+  height: 15em;
+  overflow-y: auto;
+}
+
 $max: 10;
 $offset: 1;
 $unit: "em";
@@ -23,7 +28,7 @@ $unit: "em";
   $i: 0;
   @while $i <= $max {
     #{$className + $i} {
-      #{$styleName}: #{$i + $unit};
+      #{$styleName}: #{$i + $unit} !important;
     }
     $i: $i + $offset;
   }
